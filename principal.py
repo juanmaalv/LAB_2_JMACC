@@ -4,10 +4,16 @@
 # -- mantiene: mauanaya
 # -- repositorio: https://github.com/mauanaya/LAB_2_VMAA
 # -- ------------------------------------------------------------------------------------ -- #
-
+import pandas as pd
 import funciones as fn
 #%%
 datos = fn.f_leer_archivo(param_archivo='archivo_tradeview_1.xlsx')
 fn.f_pip_size(param_ins='audusd')
 datos = fn.f_columnas_tiempo(param_data=datos)
 datos = fn.f_columnas_pips(param_data=datos)
+datos = fn.f_columnas_capital_acum(param_data=datos)
+df_1 = fn.f_estadisticas_ba(param_data=datos)
+
+#%%
+a= [datos['capital_acm'][83],5000]
+a = pd.DataFrame(a)
